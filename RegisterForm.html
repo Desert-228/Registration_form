@@ -154,17 +154,12 @@
 
             <div class="tag1">
                 <label for="mob"> Mobile Number : </label>
-                <input type="text" name="mob" id="mob" placeholder="Enter your Mobile Number">
+                <input type="number" name="mob" id="mob" placeholder="Enter your Mobile Number">
             </div>
 
             <div class="tag1">
                 <label for="email"> Email : </label>
                 <input type="text" name="email" id="email" placeholder="Enter your Email id">
-            </div>
-
-            <div class="tag1">
-                <label for="us"> USA Number : </label>
-                <input type="text" name="us" id="us" placeholder="Enter your US Number">
             </div>
 
             <div class="tag1">
@@ -202,20 +197,18 @@
             var firstname = document.getElementById("fn").value
             var phone = document.getElementById("mob").value
             var mail = document.getElementById("email").value
-            var usa = document.getElementById("us").value
             var password = document.getElementById("pass").value
             var dob = document.getElementById("dob").value
 
             console.log("Function Middle")
 
             var testarr = []
-            testarr.push(firstname, phone, mail, usa, password, dob)
+            testarr.push(firstname, phone, mail, password, dob)
             console.log(testarr)
             
             var firstcheck = /^[a-zA-Z ]+$/
             var phonecheck = /^[0-9]{10}$/
             var mailcheck = /^[a-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
-            var usacheck = /^(\([0-9]{3}\)|[0-9]{3})[\s\-]?[\0-9]{3}[\s\-]?[0-9]{4}$/
             var passcheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/
             var dobcheck = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
 
@@ -254,16 +247,6 @@
                 swal({
                     title: "ERROR",
                     text: "Please Enter valid Email",
-                    icon: "error",
-                });
-                return false
-            }
-
-            if(!usa.match(usacheck))
-            {
-                swal({
-                    title: "ERROR",
-                    text: "Please enter valid USA Number",
                     icon: "error",
                 });
                 return false
